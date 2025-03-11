@@ -77,11 +77,30 @@ public class GestorNominas {
 
         System.out.println("BCCC = " + bccc);
 
-        System.out.println("Rango minimo BCCC: ");
-        double minimoBccc = scn.nextDouble();
+        double minimoBccc = 0;
+        double maximoBccc = 0;
+        boolean nValido = true;
+        do {
 
-        System.out.println("Rango maximo BCCC: ");
-        double maximoBccc = scn.nextDouble();
+            try {
+                Scanner sc = new Scanner(System.in);
+
+                System.out.println("Rango minimo BCCC: ");
+                minimoBccc = sc.nextDouble();
+
+                System.out.println("Rango maximo BCCC: ");
+                maximoBccc = sc.nextDouble();
+
+                if (!nValido){
+                    nValido = true;
+                }
+
+            } catch (Exception e) {
+                System.out.println("Número introducido incorrecto");
+                nValido = false;
+            }
+
+        } while (!nValido);
 
         double contingenciasComunes = 0;
 
